@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LID_Games_Arcade.WormJuego"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             Title=""
+             BackgroundImageSource="fondo_worm.png">
+
+    <VerticalStackLayout>
+        
+        <toolkit:MediaElement x:Name="audioTecla"
+                              Source="embed://audio_tecla_arcade_dos.mp3"
+                              IsVisible="false"
+                              Speed="1"/>
+        
+        <toolkit:MediaElement x:Name="musicaFondo"
+                      Source="embed://worm_music.mp3"
+                      IsVisible="false"
+                      Speed="1"
+                      ShouldAutoPlay="True"
+                      ShouldLoopPlayback="True"/>
+
+        <Grid>
+            <ImageButton Source="gif_play.gif"
+                         x:Name="gifPlay"
+                         Aspect="AspectFill"
+                         Margin="180"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center"
+                         WidthRequest="250"
+                         HeightRequest="250"
+                         CornerRadius="130"
+                         IsVisible="true"/>
+
+            <!-- Resto del contenido (oculto hasta que se inicie el juego) -->
+            <StackLayout IsVisible="False" x:Name="contenidoJuego">
+                <HorizontalStackLayout Spacing="100" HorizontalOptions="Center" Margin="0,15,0,0">
+                    <Label Text="SCORE"
+                           TextColor="White"
+                           FontFamily="advancedPixel7"
+                           FontSize="50"
+                           HorizontalTextAlignment="Center"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Start"/>
+
+                    <ImageButton x:Name="pausebtn"
+                                 Source="pause_btn.png"
+                                 WidthRequest="30"
+                                 BackgroundColor="Transparent"
+                                 HorizontalOptions="End"
+                                 Clicked="pausebtn_Clicked"
+                                 Pressed="botonPresionado"
+                                 Released="botonLiberado"/>
+
+                    <Label Text="🍕COUNT"
+                           TextColor="White"
+                           FontFamily="advancedPixel7"
+                           HorizontalTextAlignment="Center"
+                           FontSize="50"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Start"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="220" HorizontalOptions="Center" VerticalOptions="Start">
+                    <Label Text="0000"
+                           x:Name="lblScore"
+                           TextColor="White"
+                           FontFamily="advancedPixel7"
+                           HorizontalTextAlignment="Center"
+                           FontSize="50"
+                           Margin="-30,0,0,0"/>
+
+                    <Label Text="0000"
+                           x:Name="lblPizzas"
+                           TextColor="White"
+                           FontFamily="advancedPixel7"
+                           HorizontalTextAlignment="Center"
+                           FontSize="50"
+                           Margin="65,0,0,0"/>
+                </HorizontalStackLayout>
+
+                <Grid x:Name="espacioJuegoWorm" HorizontalOptions="Center">
+
+                    <Grid.GestureRecognizers>
+                        <SwipeGestureRecognizer Direction="Left" Swiped="SwipeGestureRecognizer_Swiped"/>
+                        <SwipeGestureRecognizer Direction="Right" Swiped="SwipeGestureRecognizer_Swiped"/>
+                        <SwipeGestureRecognizer Direction="Up" Swiped="SwipeGestureRecognizer_Swiped"/>
+                        <SwipeGestureRecognizer Direction="Down" Swiped="SwipeGestureRecognizer_Swiped"/>
+                    </Grid.GestureRecognizers>
+
+                    <Image Grid.Row="5" Grid.Column="12" Source="worm_cara.png" x:Name="wormHead" WidthRequest="40" HeightRequest="26" Aspect="AspectFill" VerticalOptions="Center" HorizontalOptions="Center"/>
+                </Grid>
+            </StackLayout>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

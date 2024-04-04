@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LID_Games_Arcade.juegoAlien"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             Title=""
+             x:Name="contenedorJuegoAlien"
+             BackgroundImageSource="fondo_juego_alien.jpg">
+
+    <VerticalStackLayout>
+        <toolkit:MediaElement x:Name="audioTecla"
+                              Source="embed://audio_tecla_arcade_dos.mp3"
+                              IsVisible="false"
+                              Speed="1"/>
+        <toolkit:MediaElement x:Name="musicaFondo"
+                       Source="embed://alien_assault_music.mp3"
+                       IsVisible="false"
+                       Speed="1"
+                       ShouldAutoPlay="True"
+                       ShouldLoopPlayback="True"/>
+        <Grid>
+            <ImageButton Source="gif_play.gif" x:Name="gifPlay" Aspect="AspectFill" Margin="180" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="250" HeightRequest="250" CornerRadius="130" IsVisible="true"/>
+
+            <!-- Resto del contenido (oculto hasta que se inicie el juego) -->
+            <StackLayout IsVisible="false" x:Name="contenidoJuego">
+
+                <HorizontalStackLayout Spacing="100" HorizontalOptions="Center">
+                    <Label Text="SCORE"
+                           TextColor="White"
+                           FontFamily="advancedPixel7"
+                           FontSize="50"
+                           HorizontalTextAlignment="Center"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Start"/>
+
+                    <ImageButton x:Name="pausebtn"
+                                 Source="pause_btn.png"
+                                 WidthRequest="30"
+                                 BackgroundColor="Transparent"
+                                 HorizontalOptions="End"
+                                 Clicked="pausebtn_Clicked"
+                                 Pressed="botonPresionado"
+                                 Released="botonLiberado"/>
+
+                    <Label Text="TIMER"
+                           TextColor="White"
+                           FontFamily="advancedPixel7"
+                           HorizontalTextAlignment="Center"
+                           FontSize="50"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Start"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="220" HorizontalOptions="Center" VerticalOptions="Start">
+                    <Label Text="0000"
+                           x:Name="lblPuntos"
+                           TextColor="White"
+                           FontFamily="advancedPixel7"
+                           HorizontalTextAlignment="Center"
+                           FontSize="50"
+                           Margin="-30,0,0,0"/>
+                    <Label Text="00:30"
+                           x:Name="tiempoDeJuegoRestante"
+                           TextColor="White"
+                           FontFamily="advancedPixel7"
+                           HorizontalTextAlignment="Center"
+                           FontSize="50"
+                           Margin="65,0,0,0"/>
+                </HorizontalStackLayout>
+
+
+                <Grid Margin="10,20,10,20" x:Name="gridAliens" HorizontalOptions="Center" VerticalOptions="Center">
+
+                    <Image x:Name="balaPrueba"
+       Source="bala_nave.png"
+       WidthRequest="30"
+       HeightRequest="30"
+       IsVisible="true"
+       Grid.Row="6"
+       Grid.Column="8"/>
+                    <Slider x:Name="sldNave"
+WidthRequest="275"
+HeightRequest="40"
+HorizontalOptions="CenterAndExpand"
+VerticalOptions="Center"
+MinimumTrackColor="Transparent"
+MaximumTrackColor="Transparent" 
+ThumbImageSource="nave_juego_alien.png" 
+Maximum="18"
+Minimum="0"
+Scale="3"
+ThumbColor="Transparent"
+Value="8.51"
+Grid.Row="7"
+Grid.ColumnSpan="18"
+IsVisible="true"/>
+                   
+                </Grid>
+              
+            </StackLayout>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LID_Games_Arcade.Informacion_Proyecto"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             Title=""
+             BackgroundImageSource="fondo_menu_juegos.jpg">
+
+    <VerticalStackLayout>
+
+        <toolkit:MediaElement x:Name="audioTecla"
+                              Source="embed://audio_tecla_arcade_dos.mp3"
+                              IsVisible="false"
+                              Speed="1"/>
+
+        <Label Text="UNIVERSIDAD LATINA DE COSTA RICA&#10;
+Facultad de Ingeniería&#10;
+Ingeniería en sistemas computacionales&#10;
+&#10;
+Curso:&#10;
+BISI10 Programación Móvil&#10;
+&#10;
+Nombre del proyecto: &#10;
+Proyecto 1&#10;
+&#10;
+Estudiantes: &#10;
+Amores Quesada Luis Alejandro&#10;
+Soto Bonilla Dereck Josué&#10;
+Yip Pantoja Ignacio&#10;
+&#10;
+Profesor: &#10;
+Johan Alberto Figueroa Guevara&#10;
+&#10;
+Fecha de entrega: &#10;
+Miércoles 20 de diciembre del 2023&#10;
+&#10;&#10;"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center"
+               FontFamily="advancedPixel7"
+               FontAttributes="Bold"
+               FontSize="20"
+               Margin="0,10"/>
+
+        <ImageButton x:Name="ExitBtn"
+                     Source="exit.png"
+                     HeightRequest="38"
+                     WidthRequest="103"
+                     Aspect="AspectFill"
+                     CornerRadius="10"
+                     BorderColor="Black"
+                     Pressed="ExitBtn_Pressed"
+                     Released="ExitBtn_Released"
+                     Clicked="ExitBtn_Clicked"/>
+
+    </VerticalStackLayout>
+</ContentPage>

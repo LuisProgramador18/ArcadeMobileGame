@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LID_Games_Arcade.PacManMemoryJuego"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             Title=""
+             BackgroundImageSource="fondo_juego_pacman.png">
+    <VerticalStackLayout>
+        <toolkit:MediaElement x:Name="audioTecla"
+                              Source="embed://audio_tecla_arcade_dos.mp3"
+                              IsVisible="false"
+                              Speed="1"/>
+        <toolkit:MediaElement x:Name="musicaFondo"
+                      Source="embed://pac_man_memory_audio.mp3"
+                      IsVisible="false"
+                      Speed="1"
+                              ShouldAutoPlay="True"
+                              ShouldLoopPlayback="True"/>
+        <Grid>
+            <ImageButton Source="gif_play.gif"
+                         x:Name="gifPlay"
+                         Aspect="AspectFill"
+                         Margin="180"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center"
+                         WidthRequest="250"
+                         HeightRequest="250"
+                         CornerRadius="70"
+                         IsVisible="true"/>
+
+            <StackLayout IsVisible="False" x:Name="contenidoJuego">
+                <HorizontalStackLayout Spacing="100"
+                                       HorizontalOptions="Center">
+
+                    <Label Text="SCORE"
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                           FontFamily="advancedPixel7"
+                           FontSize="50"
+                           HorizontalTextAlignment="Center"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Start"/>
+
+                    <ImageButton x:Name="pausebtn"
+                                 Source="pause_btn.png"
+                                 WidthRequest="30"
+                                 BackgroundColor="Transparent"
+                                 HorizontalOptions="End"
+                                 Clicked="pausebtn_Clicked"
+                                 Pressed="botonPresionado"
+                                 Released="botonLiberado"/>
+
+                    <Label Text="TIME"
+                           TextColor="Black"
+                           FontAttributes="Bold"
+                           FontFamily="advancedPixel7"
+                           HorizontalTextAlignment="Center"
+                           FontSize="50"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Start"/>
+
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="220"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Start">
+                    <Label Text="0000"
+                           x:Name="puntaje"
+                           TextColor="Black"
+                           FontFamily="advancedPixel7"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Center"
+                           FontSize="50"
+                           Margin="10,0,0,0"/>
+                    <Label Text="00:30"
+                           x:Name="temporizadorJuego"
+                           FontAttributes="Bold"
+                           TextColor="Black"
+                           FontFamily="advancedPixel7"
+                           HorizontalTextAlignment="Center"
+                           FontSize="50"
+                           Margin="30,0,0,0"/>
+                </HorizontalStackLayout>
+
+                <VerticalStackLayout>
+                    <Grid ColumnSpacing="60"
+                          RowSpacing="10"
+                          VerticalOptions="Center"
+                          HorizontalOptions="Center"
+                          Margin="60,0,40,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="110"/>
+                            <RowDefinition Height="110"/>
+                            <RowDefinition Height="110"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="90"/>
+                        </Grid.ColumnDefinitions>
+
+                        <BoxView BackgroundColor="Transparent"
+                                 Grid.Column="0"
+                                 Grid.Row="0"/>
+                        <ImageButton x:Name="cartaPacMan0"
+                                     AutomationId="cartaPacMan0"
+                                     Grid.Column="0"
+                                     Grid.Row="0"
+                                     BackgroundColor="Transparent"
+                                     Source="pacman_card.png"
+                                     Clicked="girarCarta"/>
+
+                        <BoxView BackgroundColor="Transparent" Grid.Column="0" Grid.Row="1"/>
+                        <ImageButton x:Name="cartaPacMan1" AutomationId="cartaPacMan1" Grid.Column="0" Grid.Row="1" BackgroundColor="Transparent" Source="pacman_card.png" Clicked="girarCarta"/>
+
+                        <BoxView BackgroundColor="Transparent" Grid.Column="0" Grid.Row="2"/>
+                        <ImageButton x:Name="cartaPacMan2" AutomationId="cartaPacMan2" Grid.Column="0" Grid.Row="2" BackgroundColor="Transparent" Source="pacman_card.png" Clicked="girarCarta"/>
+
+                        <BoxView BackgroundColor="Transparent" Grid.Column="1" Grid.Row="0"/>
+                        <ImageButton x:Name="cartaPacMan3" AutomationId="cartaPacMan3" Grid.Column="1" Grid.Row="0" BackgroundColor="Transparent" Source="pacman_card.png" Clicked="girarCarta"/>
+
+                        <BoxView BackgroundColor="Transparent" Grid.Column="1" Grid.Row="1"/>
+                        <ImageButton x:Name="cartaPacMan4" AutomationId="cartaPacMan4" Grid.Column="1" Grid.Row="1" BackgroundColor="Transparent" Source="pacman_card.png" Clicked="girarCarta"/>
+
+                        <BoxView BackgroundColor="Transparent" Grid.Column="1" Grid.Row="2"/>
+                        <ImageButton x:Name="cartaPacMan5" AutomationId="cartaPacMan5" Grid.Column="1" Grid.Row="2" BackgroundColor="Transparent" Source="pacman_card.png" Clicked="girarCarta"/>
+
+
+                        <BoxView BackgroundColor="Transparent" Grid.Column="3" Grid.Row="0"/>
+                        <ImageButton x:Name="cartaPacMan6" AutomationId="cartaPacMan6" Grid.Column="3" Grid.Row="0" BackgroundColor="Transparent" Source="pacman_card.png" Clicked="girarCarta"/>
+                        
+                        <BoxView BackgroundColor="Transparent" Grid.Column="3" Grid.Row="1"/>
+                        <ImageButton x:Name="cartaPacMan7" AutomationId="cartaPacMan7" Grid.Column="3" Grid.Row="1" BackgroundColor="Transparent" Source="pacman_card.png" Clicked="girarCarta"/>
+                        
+                        <BoxView BackgroundColor="Transparent" Grid.Column="3" Grid.Row="2"/>
+                        <ImageButton x:Name="cartaPacMan8" AutomationId="cartaPacMan8" Grid.Column="3" Grid.Row="2" BackgroundColor="Transparent" Source="pacman_card.png" Clicked="girarCarta"/>
+
+
+                        <BoxView BackgroundColor="Transparent" Grid.Column="2" Grid.Row="0"/>
+                        <ImageButton x:Name="cartaPacMan9" AutomationId="cartaPacMan9" Grid.Column="2" Grid.Row="0" BackgroundColor="Transparent" Source="pacman_card.png" Clicked="girarCarta"/>
+                        
+                        <BoxView BackgroundColor="Transparent" Grid.Column="2" Grid.Row="1"/>
+                        <ImageButton x:Name="cartaPacMan10" AutomationId="cartaPacMan10" Grid.Column="2" Grid.Row="1" BackgroundColor="Transparent" Source="pacman_card.png" Clicked="girarCarta"/>
+                        
+                        <BoxView BackgroundColor="Transparent" Grid.Column="2" Grid.Row="2"/>
+                        <ImageButton x:Name="cartaPacMan11" AutomationId="cartaPacMan11" Grid.Column="2" Grid.Row="2" BackgroundColor="Transparent" Source="pacman_card.png" Clicked="girarCarta"/>
+
+
+                        <BoxView BackgroundColor="Transparent" Grid.Column="4" Grid.Row="0"/>
+                        <ImageButton x:Name="cartaPacMan12" AutomationId="cartaPacMan12" Grid.Column="4" Grid.Row="0" BackgroundColor="Transparent" Source="pacman_card.png" Clicked="girarCarta"/>
+                        
+                        <BoxView BackgroundColor="Transparent" Grid.Column="4" Grid.Row="1"/>
+                        <ImageButton x:Name="cartaPacMan13" AutomationId="cartaPacMan13" Grid.Column="4" Grid.Row="1" BackgroundColor="Transparent" Source="pacman_card.png" Clicked="girarCarta"/>
+                        
+                        <BoxView BackgroundColor="Transparent" Grid.Column="4" Grid.Row="2"/>
+                        <ImageButton x:Name="cartaPacMan14" AutomationId="cartaPacMan14" Grid.Column="4" Grid.Row="2" BackgroundColor="Transparent" Source="pacman_card.png" Clicked="girarCarta"/>
+
+
+                        <BoxView BackgroundColor="Transparent" Grid.Column="5" Grid.Row="0"/>
+                        <ImageButton x:Name="cartaPacMan15" AutomationId="cartaPacMan15" Grid.Column="5" Grid.Row="0" BackgroundColor="Transparent" Source="pacman_card.png" Clicked="girarCarta"/>
+                        
+                        <BoxView BackgroundColor="Transparent" Grid.Column="5" Grid.Row="1"/>
+                        <ImageButton x:Name="cartaPacMan16" AutomationId="cartaPacMan16" Grid.Column="5" Grid.Row="1" BackgroundColor="Transparent" Source="pacman_card.png" Clicked="girarCarta"/>
+                        
+                        <BoxView BackgroundColor="Transparent" Grid.Column="5" Grid.Row="2"/>
+                        <ImageButton x:Name="cartaPacMan17" AutomationId="cartaPacMan17" Grid.Column="5" Grid.Row="2" BackgroundColor="Transparent" Source="pacman_card.png" Clicked="girarCarta"/>
+
+                    </Grid>
+                </VerticalStackLayout>
+
+            </StackLayout>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

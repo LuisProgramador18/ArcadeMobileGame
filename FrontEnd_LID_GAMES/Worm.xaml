@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LID_Games_Arcade.Worm"
+             xmlns:toolKit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             Title=""
+             BackgroundImageSource="gif_worm.gif">
+    <VerticalStackLayout>
+
+        <toolKit:MediaElement x:Name="audioTecla"
+                              Source="embed://audio_tecla_arcade_dos.mp3"
+                              IsVisible="false"
+                              Speed="1"/>
+
+        <Image Margin="20"
+               Source="worm.jpg"
+               WidthRequest="250"
+               HeightRequest="200"/>
+
+        <StackLayout Orientation="Vertical"
+                     Spacing="-40"
+                     HorizontalOptions="Center"
+                     Margin="1">
+            <Label Text="Worm"
+                   FontSize="100"
+                   TextColor="White"
+                   FontFamily="advancedPixel7"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand"/>
+        </StackLayout>
+
+        <VerticalStackLayout Margin="-40">
+            <ImageButton Source="winner_podium.png"
+                         BackgroundColor="Transparent"
+                         WidthRequest="100"
+                         HeightRequest="100"
+                         Aspect="AspectFill"
+                         HorizontalOptions="Center"
+                         Pressed="botonPresionado"
+                         Clicked="lista_puntajes_Clicked"
+                         Released="botonLiberado"/>
+
+            <ImageButton Source="play.png"
+                         x:Name="btnPlayWorm"
+                         BackgroundColor="Transparent"
+                         Aspect="Fill"
+                         HeightRequest="50"
+                         WidthRequest="150"
+                         Margin="-10"
+                         Pressed="botonPresionado"
+                         Clicked="btnPlayWorm_Clicked"
+                         Released="botonLiberado"/>
+        </VerticalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

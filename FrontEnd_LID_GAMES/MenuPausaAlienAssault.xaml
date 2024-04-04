@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LID_Games_Arcade.MenuPausaAlienAssault"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             Title=""
+             BackgroundImageSource="fondo_juego_alien.jpg">
+
+    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="3">
+        <toolkit:MediaElement x:Name="audioTecla"
+                              Source="embed://audio_tecla_arcade_dos.mp3"
+                              IsVisible="false"
+                              Speed="1"/>
+
+        <ImageButton x:Name="playResumebtn"
+                     Source="play.png"
+                     WidthRequest="250"
+                     HeightRequest="100"
+                     BackgroundColor="Transparent"
+                     Clicked="playResumebtn_Clicked"
+                     Pressed="botonPresionado"
+                     Released="botonLiberado"/>
+
+    </VerticalStackLayout>
+
+</ContentPage>

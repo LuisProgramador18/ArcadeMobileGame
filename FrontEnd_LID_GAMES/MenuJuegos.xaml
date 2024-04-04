@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LID_Games_Arcade.MenuJuegos"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             Title=""
+             BackgroundImageSource="fondo_menu_juegos.jpg">
+
+    <VerticalStackLayout>
+
+        <toolkit:MediaElement x:Name="audioTecla"
+                              Source="embed://audio_tecla_arcade_dos.mp3"
+                              IsVisible="false"
+                              Speed="1"/>
+
+        <ImageButton Source="alien.jpg"
+                     x:Name="alienAssaultBtn"
+                     Margin="10"      
+                     Pressed="botonPresionado"
+                     Released="botonLiberado"
+                     HeightRequest="100"
+                     WidthRequest="100"
+                     Aspect="AspectFill"
+                     CornerRadius="150"
+                     Clicked="alienAssaultBtn_Clicked"/>
+
+        <Label Margin="2"
+               Text="Alien Assault"
+               TextColor="White"
+               FontSize="27"
+               FontFamily="advancedPixel7"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"/>
+
+        <ImageButton x:Name="juegoPacMemoryBtn"
+                     Margin="10"
+                     Pressed="botonPresionado"
+                     Released="botonLiberado"
+                     Source="pac.jpg"
+                     HeightRequest="100"
+                     WidthRequest="100"
+                     Aspect="AspectFill"
+                     CornerRadius="150"
+                     Clicked="juegoPacMemoryBtn_Clicked"/>
+
+        <Label Text="Pac Memory"
+               FontSize="27"
+               TextColor="White"
+               FontFamily="advancedPixel7"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"/>
+
+        <ImageButton x:Name="juegoWormBtn"
+                     Margin="10"
+                     Pressed="botonPresionado"
+                     Released="botonLiberado"
+                     Source="worm.jpg"
+                     HeightRequest="100"
+                     WidthRequest="100"
+                     Aspect="AspectFill"
+                     CornerRadius="150"
+                     Clicked="juegoWormBtn_Clicked"/>
+
+        <Label Text="Worm"
+               FontSize="27"
+               TextColor="White"
+               FontFamily="advancedPixel7"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"/>
+
+        <HorizontalStackLayout Margin="6"
+                               Spacing="10"
+                               HorizontalOptions="Center">
+
+            <ImageButton BackgroundColor="Transparent"
+                         Source="simbolo_pregunta.png"
+                         CornerRadius="9"
+                         HeightRequest="55"
+                         WidthRequest="55"
+                         Clicked="info_btn_Clicked"
+                         Pressed="botonPresionado"
+                         Released="botonLiberado"/>
+
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+
+</ContentPage>

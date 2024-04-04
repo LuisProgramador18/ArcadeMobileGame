@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LID_Games_Arcade.LeaderBoardAlien"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             Title=""
+             BackgroundImageSource="fondo_juego_alien.jpg">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="10">
+
+            <toolkit:MediaElement x:Name="audioTecla"
+                                  Source="embed://audio_tecla_arcade_dos.mp3"
+                                  IsVisible="false"
+                                  Speed="1"/>
+            <Label Text="ALIEN ASSAULT LEADERBOARD"
+                   FontSize="60"
+                   TextColor="White"
+                   FontFamily="advancedPixel7"
+                   HorizontalOptions="Center"/>
+
+            <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+
+                <VerticalStackLayout HorizontalOptions="Center">
+                    <HorizontalStackLayout Spacing="55">
+                        <Label Text="POSITIONS" FontAttributes="Bold" TextColor="White" FontFamily="advancedPixel7" FontSize="65"/>
+                        <Label Text="PLAYERS" FontAttributes="Bold" TextColor="White" FontFamily="advancedPixel7" FontSize="65"/>
+                        <Label Text="SCORES" FontAttributes="Bold" TextColor="White" FontFamily="advancedPixel7" FontSize="65"/>
+                    </HorizontalStackLayout>
+
+                    <ListView x:Name="listScores" IsPullToRefreshEnabled="True">
+
+                        <ListView.ItemTemplate>
+
+                            <DataTemplate>
+
+                                <ViewCell>
+
+                                    <StackLayout Orientation="Horizontal" Margin="70,5,0,5" Spacing="160" HorizontalOptions="CenterAndExpand">
+
+                                        <Image Source="{Binding posicion}" WidthRequest="70" HeightRequest="70" />
+                                        <Label Text="{Binding nombreUsuario}" FontAttributes="Bold" TextColor="White" FontFamily="advancedPixel7" FontSize="65"/>
+                                        <Label Text="{Binding puntos}" FontAttributes="Bold" TextColor="White" FontFamily="advancedPixel7" FontSize="65"/>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+                    </ListView>
+
+                    <ImageButton x:Name="quitGamebtn"
+                                 Source="quit_btn.png"
+                                 WidthRequest="250"
+                                 HeightRequest="100"
+                                 BackgroundColor="Transparent"
+                                 Clicked="quitLeaderboardBtn_Clicked"
+                                 Pressed="botonPresionado"
+                                 Released="botonLiberado"/>
+                </VerticalStackLayout>
+
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

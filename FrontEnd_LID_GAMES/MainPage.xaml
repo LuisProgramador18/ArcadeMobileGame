@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="FrontEnd_LID_GAMES.MainPage" 
+             BackgroundImageSource="gif_principal.gif"
+             Title="">
+    <ScrollView>
+        <VerticalStackLayout Spacing="25" Padding="30,0" VerticalOptions="Center">
+            <toolkit:MediaElement x:Name="audioTecla"
+                                  Source="embed://audio_tecla_arcade_dos.mp3"
+                                  IsVisible="false"
+                                  Speed="1"/>
+
+            <Image Source="letras.png" 
+                   x:Name="letras"
+                   SemanticProperties.Description="Nombre del videojuego"
+                   HeightRequest="200"
+                   HorizontalOptions="Center" />
+
+            <Entry Placeholder="Enter Nickname..."
+                   PlaceholderColor="#000"
+                   BackgroundColor="#E5FFE5"
+                   WidthRequest="250"
+                   HeightRequest="35"
+                   Opacity="0.5"
+                   Keyboard="Chat"
+                   MaxLength="3"                
+                   FontSize="20"
+                   FontFamily="advancedPixel7"
+                   FontAttributes="Bold"
+                   TextTransform="Uppercase"
+                   CharacterSpacing="2"
+                   ClearButtonVisibility="WhileEditing"
+                   x:Name="nameUser"
+                   TextChanged="nameUser_TextChanged" />
+
+            <StackLayout Orientation="Horizontal"
+                         Spacing="10"
+                         HorizontalOptions="Center"
+                         Margin="30">
+
+                <ImageButton x:Name="botonStart"
+                             Source="start_buttom.png"
+                             HeightRequest="38"
+                             WidthRequest="103"
+                             Aspect="AspectFill"
+                             CornerRadius="10"
+                             Pressed="botonStart_Pressed"   
+                             Released="botonStart_Released"
+                             Clicked="botonStart_Clicked" />
+
+                <ImageButton x:Name="ExitBtn"
+                             Source="exit.png"
+                             HeightRequest="38"
+                             WidthRequest="103"
+                             Aspect="AspectFill"
+                             CornerRadius="10"
+                             BorderColor="Black"
+                             Pressed="ExitBtn_Pressed"   
+                             Released="ExitBtn_Released"
+                             Clicked="ExitBtn_Clicked" />
+            </StackLayout>
+
+            <HorizontalStackLayout VerticalOptions="End"
+                                  WidthRequest="10"
+                                  HorizontalOptions="Start"
+                                  Spacing="100"
+                                  Margin="170,0,0,-80">
+
+                <Label Text="Luis Alejandro Amores Quesada"
+                       HorizontalOptions="Start"
+                       VerticalOptions="End"
+                       TextColor="White"
+                       FontSize="20"
+                       FontFamily="advancedPixel7" />
+
+                <Label Text="Dereck Josué Soto Bonilla"
+                       HorizontalOptions="Center"
+                       VerticalOptions="End"
+                       TextColor="White"
+                       FontSize="20"
+                       FontFamily="advancedPixel7" />
+
+                <Label Text="Ignacio Yip Pantoja"
+                       HorizontalOptions="End"
+                       VerticalOptions="End"
+                       TextColor="White"
+                       FontSize="20"
+                       FontFamily="advancedPixel7" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
